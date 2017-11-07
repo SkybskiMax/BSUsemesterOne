@@ -1,40 +1,83 @@
-#include <iostream>;
-#include <string>;
+#include <iostream>
 using namespace std;
-void binaryZeroOne(signed long long int, char, char);
-void swap();
 
 int main()
 {
+	long long int number;
+	int rest10, hex, i = 0;
+	char symbol;
 	while (true)
 	{
-		int inNumber = 0;
-		char zero = '0', one = '1';
-		cout << "Input number ";
-		cin >> inNumber;
-		binaryZeroOne(inNumber, zero, one);
-		system("pause");
+		cout << "Enter number ";
+		cin >> number;
+		cout << "Enter symbol: ";
+		cin >> symbol;
+		switch (symbol)
+		{
+		case '1':
+			hex = 1;
+			break;
+		case '2':
+			hex = 2;
+			break;
+		case '3':
+			hex = 3;
+			break;
+		case '4':
+			hex = 4;
+			break;
+		case '5':
+			hex = 5;
+			break;
+		case '6':
+			hex = 6;
+			break;
+		case '7':
+			hex = 7;
+			break;
+		case '8':
+			hex = 8;
+			break;
+		case '9':
+			hex = 9;
+			break;
+		case 'A':
+			hex = 10;
+			break;
+		case 'B':
+			hex = 11;
+			break;
+		case 'C':
+			hex = 12;
+			break;
+		case 'D':
+			hex = 13;
+			break;
+		case 'E':
+			hex = 14;
+			break;
+		case 'F':
+			hex = 15;
+			break;
+		default:
+			hex = 100;
+		}
+		if (hex < 1 || hex>15)
+		{
+			cout << "Input proper symbol! " << endl;
+			system("pause");
+			system("cls");
+		}
+		else
+			break;
 	}
-}
-
-void binaryZeroOne(signed long long int inNumber, char zero, char one)
-{
-	int rest;
-	while (inNumber)
+	while (number)
 	{
-		rest = inNumber % 2;
-		if (!rest)
-			cout << zero;
-		if (rest)
-			cout << one;
-		inNumber /= 2;
+		rest10 = number % 16;
+		if (rest10 == hex)
+			i += 1;
+		number /= 16;
 	}
-	return;
+	cout << "Number of symbol " << symbol << " : " << i << endl;
+	system("pause");
 }
-
-
-//524
-//0010 0000 1100
-//20C
-
-
