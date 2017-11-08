@@ -1,11 +1,19 @@
 #include <iostream>
 using namespace std;
 
+void hex();
+
 int main()
 {
-	long long int number;
+	hex();
+	system("pause");
+}
+
+void hex()
+{
 	int rest10, hex, i = 0;
 	char symbol;
+	long long int number;
 	while (true)
 	{
 		cout << "Enter number ";
@@ -79,5 +87,5 @@ int main()
 		number /= 16;
 	}
 	cout << "Number of symbol " << symbol << " : " << i << endl;
-	system("pause");
 }
+
