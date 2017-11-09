@@ -1,76 +1,77 @@
 #include <iostream>
 using namespace std;
 
-void hex();
+int hexadecimal(char);
+void countSymbol(long long int&, char);
 
 int main()
 {
-	hex();
+	long long int number;
+	char symbol;
+	cout << "Enter number ";
+	cin >> number;
+	cout << "Enter symbol: ";
+	cin >> symbol;
+	countSymbol(number, symbol);
 	system("pause");
 }
 
-void hex()
+int hexadecimal(char symbol)
 {
-	int rest10, hex, i = 0;
-	char symbol;
-	long long int number;
+	int hexNum;
 	while (true)
 	{
-		cout << "Enter number ";
-		cin >> number;
-		cout << "Enter symbol: ";
-		cin >> symbol;
 		switch (symbol)
 		{
 		case '1':
-			hex = 1;
+			hexNum = 1;
 			break;
 		case '2':
-			hex = 2;
+			hexNum = 2;
 			break;
 		case '3':
-			hex = 3;
+			hexNum = 3;
 			break;
 		case '4':
-			hex = 4;
+			hexNum = 4;
 			break;
 		case '5':
-			hex = 5;
+			hexNum = 5;
 			break;
 		case '6':
-			hex = 6;
+			hexNum = 6;
 			break;
 		case '7':
-			hex = 7;
+			hexNum = 7;
 			break;
 		case '8':
-			hex = 8;
+			hexNum = 8;
 			break;
 		case '9':
-			hex = 9;
+			hexNum = 9;
 			break;
 		case 'A':
-			hex = 10;
+			hexNum = 10;
 			break;
 		case 'B':
-			hex = 11;
+			hexNum = 11;
 			break;
 		case 'C':
-			hex = 12;
+			hexNum = 12;
 			break;
 		case 'D':
-			hex = 13;
+			hexNum = 13;
 			break;
 		case 'E':
-			hex = 14;
+			hexNum = 14;
 			break;
 		case 'F':
-			hex = 15;
+			hexNum = 15;
 			break;
 		default:
-			hex = 100;
+			hexNum = 100;
 		}
-		if (hex < 1 || hex>15)
+		if (hexNum < 1 || hexNum>15)
 		{
 			cout << "Input proper symbol! " << endl;
 			system("pause");
@@ -79,13 +80,20 @@ void hex()
 		else
 			break;
 	}
+	return hexNum;
+}
+
+void countSymbol(long long int &number, char symbol)
+{
+	int i = 0;
+	int rest10;
+	int hexNum = hexadecimal(symbol);
 	while (number)
 	{
 		rest10 = number % 16;
-		if (rest10 == hex)
+		if (rest10 == hexNum)
 			i += 1;
 		number /= 16;
 	}
 	cout << "Number of symbol " << symbol << " : " << i << endl;
 }
-
