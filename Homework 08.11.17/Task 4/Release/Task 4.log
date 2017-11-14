@@ -1,0 +1,8 @@
+﻿  Task 4.cpp
+Task 4.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+Task 4.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+f:\githubrep\bsusemesterone\homework 08.11.17\task 4\ArrayFunc.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating code
+  All 15 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Task 4.vcxproj -> F:\GitHubRep\BSUsemesterOne\Homework 08.11.17\Release\Task 4.exe

@@ -1,0 +1,10 @@
+﻿  Task 2.cpp
+Task 2.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+Task 2.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+f:\githubrep\bsusemesterone\homework 08.11.17\task 2\ArrayFunc.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating code
+  1 of 15 functions ( 6.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Task 2.vcxproj -> F:\GitHubRep\BSUsemesterOne\Homework 08.11.17\Release\Task 2.exe
