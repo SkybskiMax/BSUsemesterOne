@@ -1,0 +1,5 @@
+﻿  Task3.cpp
+f:\githubrep\bsusemesterone\homework 15.11.17\task 3\arrayfunc.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+f:\githubrep\bsusemesterone\homework 15.11.17\task 3\arrayfunc.h(146): warning C4715: 'findInString': not all control paths return a value
+  Task 3.vcxproj -> F:\GitHubRep\BSUsemesterOne\Homework 15.11.17\Debug\Task 3.exe
+  Task 3.vcxproj -> F:\GitHubRep\BSUsemesterOne\Homework 15.11.17\Debug\Task 3.pdb (Partial PDB)
