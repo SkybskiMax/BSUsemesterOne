@@ -21,23 +21,23 @@ void strReplaceByWord(char str[], char replaceStr[], int n)
 {
 	int strLength = strGetLength(str);
 	int strReplaceLength = strGetLength(replaceStr);
-	int q = 0, k = 0, m = 0;
+	int firstLetter = 0, k = 0, lastLetter = 0;
 	char result[N] = "";
 	
 	str[strLength] = ' ';
 	str[strLength + 1] = '\0';
 	strLength++;
 
-	while (q != -1 && m != -1)
+	while (firstLetter != -1 && lastLetter != -1)
 	{
-		q = strFindAlphabet(str, m - k);
-		m = strFindNotAlphabet(str, q);
+		firstLetter = strFindAlphabet(str, lastLetter - k);
+		lastLetter = strFindNotAlphabet(str, firstLetter);
 
-		if (m - q == n)
+		if (lastLetter - firstLetter == n)
 		{
-			strCopy(str, result, m, strLength);
-			strConCat(str, replaceStr, q);
-			strConCat(str, result, q + strReplaceLength);
+			strCopy(str, result, lastLetter, strLength);
+			strConCat(str, replaceStr, firstLetter);
+			strConCat(str, result, firstLetter + strReplaceLength);
 			strReplaceBySymbol(result, '\0', 0, strGetLength(result));
 			k = n - strReplaceLength;
 		}

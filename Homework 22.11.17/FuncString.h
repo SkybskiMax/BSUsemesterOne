@@ -46,6 +46,11 @@ void transFracPar(int, int, char *);
 
 char conversionIntToChar(int);
 
+void strCreateNewArray(char*, char*);
+
+void strDeleteWordByLength(char[], int);
+
+
 
 
 int strGetLength(char arr[])
@@ -377,3 +382,58 @@ void convertToBase(char *intPartString, char *fracPartString, double &number, in
 	strConCat(intPartString, fracPartString, N);
 	strDisplay(intPartString, N);
 }
+
+void strCreateNewArray(char* massive, char* newMassive)
+{
+	int length = strGetLength(massive);
+	int firstLetter = 0, lastLetter = 0;
+	char result[N] = "";
+
+	massive[length] = ' ';
+	massive[length + 1] = '\0';
+	length++;
+
+	while (true)
+	{
+		firstLetter = strFindAlphabet(massive, lastLetter);
+		lastLetter = strFindNotAlphabet(massive, firstLetter);
+
+		if (firstLetter == -1 || lastLetter == -1)
+			break;
+		strCopy(massive, result, firstLetter, lastLetter);
+		strConCat(newMassive, result, lastLetter);
+
+		newMassive[strGetLength(newMassive)] = ' ';
+		newMassive[strGetLength(newMassive) + 1] = '\0';
+
+		strReplaceBySymbol(result, '\0', 0, strGetLength(result));
+	}
+}
+
+void strDeleteWordByLength(char massive[], int l)
+{
+	int length = strGetLength(massive);
+	int firstLetter = 0, lastLetter = 0, p = 0;
+	char result[N] = "";
+
+	massive[length] = ' ';
+	massive[length + 1] = '\0';
+	length++;
+
+	while (true)
+	{
+		firstLetter = strFindAlphabet(massive, lastLetter - p);
+		lastLetter = strFindNotAlphabet(massive, firstLetter);
+		if (firstLetter == -1 || lastLetter == -1)
+			break;
+		if (lastLetter - firstLetter == l)
+		{
+			strCopy(massive, result, lastLetter + 1, strGetLength(massive));
+			strConCat(massive, result, firstLetter);
+			strReplaceBySymbol(result, '\0', 0, strGetLength(result));
+			p = l;
+		}
+		else p = 0;
+	}
+}
+

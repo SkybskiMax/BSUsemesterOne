@@ -48,6 +48,9 @@ char conversionIntToChar(int);
 
 void strCreateNewArray(char*, char*);
 
+void strDeleteWordByLength(char[], int);
+
+
 
 
 int strGetLength(char arr[])
@@ -406,3 +409,31 @@ void strCreateNewArray(char* massive, char* newMassive)
 		strReplaceBySymbol(result, '\0', 0, strGetLength(result));
 	}
 }
+
+void strDeleteWordByLength(char massive[], int l)
+{
+	int length = strGetLength(massive);
+	int firstLetter = 0, lastLetter = 0, p = 0;
+	char result[N] = "";
+
+	massive[length] = ' ';
+	massive[length + 1] = '\0';
+	length++;
+
+	while (true)
+	{
+		firstLetter = strFindAlphabet(massive, lastLetter - p);
+		lastLetter = strFindNotAlphabet(massive, firstLetter);
+		if (firstLetter == -1 || lastLetter == -1)
+			break;
+		if (lastLetter - firstLetter == l)
+		{
+			strCopy(massive, result, lastLetter + 1, strGetLength(massive));
+			strConCat(massive, result, firstLetter);
+			strReplaceBySymbol(result, '\0', 0, strGetLength(result));
+			p = l;
+		}
+		else p = 0;
+	}
+}
+
