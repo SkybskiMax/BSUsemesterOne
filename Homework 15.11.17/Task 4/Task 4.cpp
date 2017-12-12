@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ArrayFunc.h"
+#include "FuncString.h"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ int main()
 	cout << "Input second string: " << endl;
 	cin >> secondString;
 
-	cout << "First index is: " << findInString(firstString, secondString) << endl;
+	cout << "First index is: " << strFindIndex(firstString, secondString) << endl;
 	system("pause");
 	return 0;
 }

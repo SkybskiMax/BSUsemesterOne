@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ArrayFunc.h"
+#include "FuncString.h"
 
 using namespace std;
 
@@ -14,8 +14,8 @@ int main()
 	cout << "Input second string: " << endl;
 	cin >> secondString;
 
-	stringCheckEquality(firstString, secondString, eq);
-	stringCoutEquality(eq);
+	strCheckEquality(firstString, secondString, eq);
+	strCoutEquality(eq);
 	system("pause");
 	return 0;
 }

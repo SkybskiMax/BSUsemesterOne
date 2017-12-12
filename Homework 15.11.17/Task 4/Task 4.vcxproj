@@ -114,7 +114,7 @@
     <ClCompile Include="Task 4.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArrayFunc.h" />
+    <ClInclude Include="FuncString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

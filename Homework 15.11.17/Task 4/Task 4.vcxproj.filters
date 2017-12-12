@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArrayFunc.h">
+    <ClInclude Include="FuncString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

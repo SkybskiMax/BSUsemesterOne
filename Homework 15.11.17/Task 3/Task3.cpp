@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ArrayFunc.h"
+#include "FuncString.h"
 
 using namespace std;
 
@@ -14,8 +14,8 @@ int main()
 	cout << "Input second string: " << endl;
 	cin >> secondString;
 
-	int relation = stringFindRelation(firstString, secondString);
-	stringCoutRelation(relation);
+	int relation = strFindRelation(firstString, secondString);
+	strCoutRelation(relation);
 
 	system("pause");
 	return 0;

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ArrayFunc.h"
+#include "FuncArray.h"
 
 using namespace std;
 
