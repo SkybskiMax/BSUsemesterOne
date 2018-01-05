@@ -19,6 +19,15 @@ void arraySignOfSequence(int[], int, int &, int &, int &);
 
 void arrayTypeOfSequence(int, int, int);
 
+void arrayFindMaxAndMin(int[], int, int&, int&, int&, int&);
+
+int arraySumFromPosToNeg(int[], int, int, int);
+
+void arrayDeleteZeroElements(int[], int&);
+
+void arrayArrangeElements(int[], int[], int);
+
+void getAnswer(int, int);
 
 void arrayGenerateRandom(int array[], int N, int range)
 {
@@ -135,4 +144,94 @@ void arrayTypeOfSequence(int equal, int less, int greater)
 			cout << "Non-strictly increasing sequence" << endl;
 	if (less > 0 && greater > 0)
 		cout << "Not a sequence" << endl;
+}
+
+void arrayFindMaxAndMin(int A[], int n, int &pos, int &neg, int &negPos, int& posPos)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (A[j] < 0)
+			{
+				neg = A[j];
+				negPos = j;
+			}
+		}
+		if (A[i] > 0)
+		{
+			pos = A[i];
+			posPos = i;
+			break;
+		}
+	}
+}
+
+void getAnswer(int pos, int neg)
+{
+	if (pos == 0)
+	{
+		cout << "Zero positive elements!" << endl;
+	}
+	if (neg == 0)
+	{
+		cout << "Zero negative elements!" << endl;
+	}
+	if (pos > 0 || neg < 0)
+	{
+		cout << "First positive element: " << pos << endl << "Last negative element: " << neg << endl;
+	}
+}
+
+int arraySumFromPosToNeg(int A[], int n, int negPos, int posPos)
+{
+	int sum = 0;
+	for (int i = posPos + 1; i < negPos; i += 2)
+	{
+		if ((A[i] > 0) && (A[i] % 2 != 0))
+			sum += A[i];
+	}
+	return sum;
+}
+
+void arrayDeleteZeroElements(int A[], int &n)
+{
+	int length = n;
+	for (int i = 0; i < length; i++)
+	{
+		if (A[i] == 0)
+		{
+			for (int j = i; j < length; j++)
+			{
+				A[j] = A[j + 1];
+			}
+			n--;
+			i--;
+		}
+	}
+}
+
+void arrayArrangeElements(int A[], int newA[], int n)
+{
+	int numberOfNegElements = 0;
+	for (int k = 0; k < n; k++)
+	{
+		if (A[k] < 0)
+		{
+			numberOfNegElements++;
+		}
+	}
+	for (int i = 0, j = 0, k = 0; i < n; i++)
+	{
+		if (A[i] < 0)
+		{
+			newA[j] = A[i];
+			j++;
+		}
+		if (A[i] > 0)
+		{
+			newA[k + numberOfNegElements] = A[i];
+			k++;
+		}
+	}
 }
